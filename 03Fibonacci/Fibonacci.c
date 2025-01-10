@@ -6,20 +6,26 @@
 /*   By: alexgarc4 <alexgarc4@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 12:57:16 by alexgarc4         #+#    #+#             */
-/*   Updated: 2025/01/10 02:08:03 by alexgarc4        ###   ########.fr       */
+/*   Updated: 2025/01/10 10:59:03 by alexgarc4        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	fibibacci(int n, int memo[])
+int	fibonacci(int n, int memo[])
 {
-	if (memo[n] == 0)
+	if (n == 0)
 	{
-		if (n <= 1)
-			return (n);
-		memo[n] = fibibacci(n - 1, memo) + fibibacci(n - 2, memo);
+		return (0);
+	}
+	if (n == 1)
+	{
+		return (1);
+	}
+	else
+	{
+		memo[n] = fibonacci(n - 1, memo) + fibonacci (n - 2, memo);
 	}
 	return (memo[n]);
 }
@@ -44,7 +50,8 @@ void	print_fibonacci(int size, int *memo)
 	i = 0;
 	while (i < size)
 	{
-		printf("%d\n", fibibacci(i, memo));
+		printf("%d\n", fibonacci(i, memo));
+		i++;
 	}
 }
 
