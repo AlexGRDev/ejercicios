@@ -1,57 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FizzBuzz.c                                         :+:      :+:    :+:   */
+/*   04Primo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexgarc4 <alexgarc4@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 20:57:37 by alegarc4          #+#    #+#             */
-/*   Updated: 2025/01/10 01:40:04 by alexgarc4        ###   ########.fr       */
+/*   Created: 2025/01/10 00:57:37 by alexgarc4         #+#    #+#             */
+/*   Updated: 2025/01/10 01:37:17 by alexgarc4        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*fizzbuzz(int *n)
+int	primo(int n) 
 {
-	if (*n % 3 == 0 && *n % 5 == 0)
+	int	i;
+	if (n <= 1) 
 	{
-		printf("fizzbuzz");
+		return (0);
 	}
-	else if (*n % 3 == 0)
+	i = 0;
+	while (i <= n)
 	{
-		printf("fizz\n");
+		if (i % n == 0)
+		{
+			return (0);
+		}
+		i++;
 	}
-	else if (*n % 5 == 0)
-	{
-		printf("buzz\n");
-	}
-	else
-	{
-		printf("%d\n", *n);
-	}
-	return (0);
+	return (1);
 }
 
 int	main(void)
 {
 	int	n;
-	int	*ptr;
-
-	ptr = &n;
-	ptr = malloc(sizeof(int));
-	if (ptr == NULL)
+	
+	printf("Ingrese un numero: ");
+	scanf("%d", &n);
+	if (primo(n))
 	{
-		fprintf(stderr, "Memory allocation failed\n");
-		return (1);
-	}
-	*ptr = 1;
-	while (*ptr <= 100)
+		printf("El numero %d es primo\n", n);
+        } 
+	else
 	{
-		fizzbuzz(ptr);
-		(*ptr)++;
+		printf("El numero %d no es primo\n", n);
 	}
-	free(ptr);
 	return (0);
 }
