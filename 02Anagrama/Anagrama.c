@@ -6,7 +6,7 @@
 /*   By: alexgarc4 <alexgarc4@student.42barcelon    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 10:00:44 by alexgarc4         #+#    #+#             */
-/*   Updated: 2025/01/10 01:23:49 by alexgarc4        ###   ########.fr       */
+/*   Updated: 2025/01/10 01:55:02 by alexgarc4        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 bool	anagrama(char *str1, char *str2)
 {
 	int	i;
-        int	j;
-	
+	int	j;
+
 	if (strlen(str1) != strlen(str2))
 	{
 		return (false);
